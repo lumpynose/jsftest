@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core"
+    xmlns:c="jakarta.tags.core" xmlns:h="jakarta.faces.html">
+
+<h:head>
+    <h:outputStylesheet library="css" name="default.css" />
+    <title>jsf test</title>
+</h:head>
+
+<f:metadata>
+    <f:viewParam name="something1" value="#{something1}" />
+    <f:viewParam name="something2" value="#{something2}" />
+</f:metadata>
+
+<h:body>
+    <p>
+        <h:outputLabel for="something1" rendered="true"
+            value="Something1 entered" />
+        <br />
+        <h:outputText id="something1" title="Something1 entered"
+            value="#{something1}" />
+    </p>
+
+    <p>
+        <h:outputLabel for="something2" rendered="true"
+            value="Something2 entered" />
+        <br />
+        <h:outputText id="something2" title="Something2 entered"
+            value="#{something2}" />
+    </p>
+
+    <p>
+        <h:link outcome="/index">
+            back to beginning
+        </h:link>
+    </p>
+</h:body>
+</html>

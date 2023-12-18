@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core"
+    xmlns:c="jakarta.tags.core" xmlns:h="jakarta.faces.html">
+
+<h:head>
+    <h:outputStylesheet library="css" name="default.css" />
+    <title>jsf test</title>
+</h:head>
+
+<h:body>
+    <p>
+        <h:outputLink value="index-forward-ivp">
+            index forward includeViewParams
+        </h:outputLink>
+    </p>
+
+    <p>
+        <h:outputLink value="index-forward-noivp">
+            index forward no includeViewParams
+        </h:outputLink>
+    </p>
+
+    <p>
+        <h:outputLink value="index-redirect-ivp">
+            index redirect includeViewParams
+        </h:outputLink>
+    </p>
+
+    <p>
+        <h:outputLink value="index-redirect-noivp">
+            index redirect no includeViewParams
+        </h:outputLink>
+    </p>
+</h:body>
+</html>

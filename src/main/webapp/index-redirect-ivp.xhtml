@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core"
+    xmlns:c="jakarta.tags.core" xmlns:h="jakarta.faces.html">
+
+<h:head>
+    <h:outputStylesheet library="css" name="default.css" />
+    <title>index redirect includeViewParams</title>
+</h:head>
+
+<h:body>
+    <h:form id="form">
+        <p>
+            <h:inputText id="something1" required="true"
+                title="Enter something1" value="#{something1}">
+                <f:validateLength minimum="1" />
+            </h:inputText>
+        </p>
+
+        <p>
+            <h:inputText id="something2" required="true"
+                title="Enter something2" value="#{something2}">
+                <f:validateLength minimum="1" />
+            </h:inputText>
+        </p>
+
+        <h:commandButton value="submit"
+            action="page2-redirect-ivp.xhtml?faces-redirect=true&amp;includeViewParams=true" />
+    </h:form>
+</h:body>
+</html>
