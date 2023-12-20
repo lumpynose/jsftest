@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core"
+    xmlns:c="jakarta.tags.core" xmlns:h="jakarta.faces.html">
+
+<h:head>
+    <h:outputStylesheet library="css" name="default.css" />
+</h:head>
+
+<h:body>
+    <h2>page2 submit, with bean</h2>
+
+    <!-- #{backingBean.setSomething1(something1)} -->
+    <!-- #{backingBean.setSomething2(something2)} -->
+
+    <ul>
+        <li>
+            <h:outputLabel for="user" value="user: " />
+            <h:outputText id="user" title="user" value="#{backingBean.user}" />
+        </li>
+        <li>
+            <h:outputLabel for="hide" value="hide: " />
+            <h:outputText id="hide" title="hide" value="#{backingBean.hide}" />
+        </li>
+        <li>
+            <h:outputLabel for="upOrDown" value="upOrDown: " />
+            <h:outputText id="upOrDown" title="upOrDown"
+                value="#{backingBean.upOrDown}" />
+        </li>
+        <li>
+            <h:outputLabel for="count" value="count: " />
+            <h:outputText id="count" title="count"
+                value="#{backingBean.count}" />
+        </li>
+    </ul>
+
+    <p>
+        <h:link outcome="/index">
+            back to beginning
+        </h:link>
+    </p>
+</h:body>
+</html>
