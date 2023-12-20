@@ -21,7 +21,7 @@
     <h:form id="form">
         <p>
             <h:outputLabel for="selectUser" value="select user: " />
-            <h:selectOneMenu id="selectUser" value="#{user}"
+            <h:selectOneMenu id="selectUser" value="#{backingBean.user}"
                 required="true" requiredMessage="Please select a user.">
                 <f:selectItem itemLabel="Select One" itemValue="" />
                 <f:selectItems value="#{backingBean.userNames}" />
@@ -33,42 +33,51 @@
         </p>
 
         <p>
-            <h:selectBooleanCheckbox value="#{hide}">
+            <h:selectBooleanCheckbox value="#{backingBean.hide}">
                 hide
             </h:selectBooleanCheckbox>
 
             <h:message for="radio" />
 
-            <h:selectOneRadio value="#{upOrDown}" group="radio">
+            <h:selectOneRadio value="#{backingBean.upOrDown}" group="radio">
                 <f:selectItem itemValue="up" itemLabel="up"
                     group="radio" />
             </h:selectOneRadio>
 
-            <h:selectOneRadio value="#{upOrDown}" group="radio">
+            <h:selectOneRadio value="#{backingBean.upOrDown}" group="radio">
                 <f:selectItem itemValue="down" itemLabel="down"
                     group="radio" />
             </h:selectOneRadio>
 
-            <h:selectOneRadio value="#{upOrDown}" group="radio">
+            <h:selectOneRadio value="#{backingBean.upOrDown}" group="radio">
                 <f:selectItem itemValue="none" itemLabel="neither"
                     group="radio" pt:checked="true" />
             </h:selectOneRadio>
         </p>
 
         <p>
-            <h:outputLabel for="count" value="how many: " />
+            <h:outputLabel for="backingBean.count" value="how many: " />
             <h:inputText id="count" required="true" title="count"
-                value="#{count}" >
+                value="#{backingBean.count}" >
                 <f:validateLength minimum="1" />
                 <f:validateLongRange minimum="0" />
             </h:inputText>
         </p>
+        
         <p class="error">
             <h:message for="count" />
         </p>
 
         <h:commandButton value="submit"
-            action="#{backingBean.submit(user, hide, upOrDown, count)}" />
+            action="page2-submit.xhtml?faces-redirect=true&amp;includeViewParams=true" />
     </h:form>
+
+    <hr />
+    
+    <p>
+        <h:link outcome="add">
+            add new user
+        </h:link>
+    </p>
 </h:body>
 </html>

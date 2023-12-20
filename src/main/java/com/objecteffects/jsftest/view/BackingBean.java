@@ -152,9 +152,10 @@ public class BackingBean implements Serializable {
         this.upOrDown = upOrDown;
         this.count = count;
 
-        log.info("submit, user: {}", this.user);
+        log.info("submit, user: {}, hide: {}, upOrDown: {}, count: {}",
+                this.user, this.hide, this.upOrDown, this.count);
 
-        return "page2-submit";
+        return "page2-submit?faces-redirect=true";
     }
 
     /**
