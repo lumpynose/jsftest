@@ -7,14 +7,14 @@ import java.util.Map;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import jakarta.enterprise.context.SessionScoped;
 import jakarta.faces.context.FacesContext;
-import jakarta.faces.view.ViewScoped;
 import jakarta.inject.Named;
 
 /**
  */
 @Named
-@ViewScoped
+@SessionScoped
 public class BackingBean implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -68,7 +68,7 @@ public class BackingBean implements Serializable {
     }
 
     /**
-     * @return
+     * @return List of userNames
      */
     public List<String> getUserNames() {
         return this.userNames;
@@ -82,12 +82,12 @@ public class BackingBean implements Serializable {
     }
 
     /**
-     * @param user the user to set
+     * @param user1 the user to set
      */
-    public void setUser(final String user) {
-        log.info("set user: {}", user);
+    public void setUser(final String user1) {
+        log.info("set user: {}", user1);
 
-        this.user = user;
+        this.user = user1;
     }
 
     /**
@@ -136,6 +136,25 @@ public class BackingBean implements Serializable {
         log.info("set count: {}", count);
 
         this.count = count;
+    }
+
+    /**
+     * @param user
+     * @param hide
+     * @param upOrDown
+     * @param count
+     * @return String url
+     */
+    public String submit(final String user, final Boolean hide,
+            final String upOrDown, final Integer count) {
+        this.user = user;
+        this.hide = hide;
+        this.upOrDown = upOrDown;
+        this.count = count;
+
+        log.info("submit, user: {}", this.user);
+
+        return "page2-submit";
     }
 
     /**
