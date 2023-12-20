@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core"
+    xmlns:c="jakarta.tags.core" xmlns:h="jakarta.faces.html">
+
+<h:head>
+    <h:outputStylesheet library="css" name="default.css" />
+</h:head>
+
+<f:metadata>
+    <f:viewParam name="user" value="#{user}" />
+    <f:viewParam name="hide" value="#{hide}" />
+    <f:viewParam name="upOrDown" value="#{upOrDown}" />
+    <f:viewParam name="count" value="#{count}" />
+    <f:viewAction action="#{backingBean.dumpParams()}" />
+</f:metadata>
+
+<h:body>
+    <h2>index redirect includeViewParams, with bean</h2>
+
+    <!-- #{backingBean.setSomething1(something1)} -->
+    <!-- #{backingBean.setSomething2(something2)} -->
+
+    <ul>
+        <li>
+            <h:outputLabel for="user" value="user: " />
+            <h:outputText id="user" title="user" value="#{user}" />
+        </li>
+        <li>
+            <h:outputLabel for="hide" value="hide: " />
+            <h:outputText id="hide" title="hide" value="#{hide}" />
+        </li>
+        <li>
+            <h:outputLabel for="upOrDown" value="upOrDown: " />
+            <h:outputText id="upOrDown" title="upOrDown"
+                value="#{upOrDown}" />
+        </li>
+        <li>
+            <h:outputLabel for="count" value="count: " />
+            <h:outputText id="count" title="count"
+                value="#{count}" />
+        </li>
+    </ul>
+
+    <p>
+        <h:link outcome="/index">
+            back to beginning
+        </h:link>
+    </p>
+</h:body>
+</html>

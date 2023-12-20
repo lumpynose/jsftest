@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core"
+    xmlns:c="jakarta.tags.core" xmlns:h="jakarta.faces.html"
+    xmlns:pt="jakarta.faces.passthrough">
+
+<h:head>
+    <h:outputStylesheet library="css" name="default.css" />
+</h:head>
+
+<h:body>
+    <h2>index redirect includeViewParams, with bean</h2>
+
+    <h:messages id="globalMessages" styleClass="error" />
+    
+    <h:form id="form">
+        <p>
+            <h:outputLabel for="selectUser" value="select user: " />
+            <h:selectOneMenu id="selectUser" value="#{user}" required="true">
+                <f:selectItem itemLabel="Select One" itemValue="" />
+                <f:selectItems value="#{backingBean.userNames}" />
+            </h:selectOneMenu>
+        </p>
+        <p class="error">
+            <h:message for="selectUser" />
+        </p>
+
+        <p>
+            <h:selectBooleanCheckbox value="#{hide}">
+                hide
+            </h:selectBooleanCheckbox>
+
+            <h:message for="radio" />
+
+            <h:selectOneRadio value="#{upOrDown}" group="radio">
+                <f:selectItem itemValue="up" itemLabel="up"
+                    group="radio" />
+            </h:selectOneRadio>
+
+            <h:selectOneRadio value="#{upOrDown}" group="radio">
+                <f:selectItem itemValue="down" itemLabel="down"
+                    group="radio" />
+            </h:selectOneRadio>
+
+            <h:selectOneRadio value="#{upOrDown}" group="radio">
+                <f:selectItem itemValue="none" itemLabel="neither"
+                    group="radio" pt:checked="true" />
+            </h:selectOneRadio>
+        </p>
+
+        <p>
+            <h:outputLabel for="count" value="how many: " />
+            <h:inputText id="count" required="true" title="count"
+                value="#{count}">
+                <f:validateLength minimum="1" />
+            </h:inputText>
+        </p>
+        <p class="error">
+            <h:message for="count" />
+        </p>
+
+        <h:commandButton value="submit"
+            action="page2-redirect-ivp.xhtml?faces-redirect=true&amp;includeViewParams=true" />
+    </h:form>
+</h:body>
+</html>
