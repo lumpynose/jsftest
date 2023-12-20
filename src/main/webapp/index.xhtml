@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="jakarta.faces.facelets" xmlns:f="jakarta.faces.core"
+    xmlns:c="jakarta.tags.core" xmlns:h="jakarta.faces.html">
+
+<h:head>
+    <h:outputStylesheet library="css" name="default.css" />
+    <title>jsf test</title>
+</h:head>
+
+<h:body>
+    <h2>no bean</h2>
+    
+    <ul>
+        <li><h:outputLink value="nobean/page1-forward-ivp">
+            page1 forward includeViewParams
+        </h:outputLink></li>
+
+        <li><h:outputLink value="nobean/page1-forward-noivp">
+            page1 forward no includeViewParams
+        </h:outputLink></li>
+
+        <li><h:outputLink value="nobean/page1-redirect-ivp">
+            page1 redirect includeViewParams
+        </h:outputLink></li>
+
+        <li><h:outputLink value="nobean/page1-redirect-noivp">
+            page1 redirect no includeViewParams
+        </h:outputLink></li>
+    </ul>
+
+    <h2>with backing bean</h2>
+    
+    <ul>
+        <li><h:outputLink value="withbean/page1-forward-ivp">
+            page1 forward includeViewParams
+        </h:outputLink></li>
+
+        <li><h:outputLink value="withbean/page1-forward-noivp">
+            page1 forward no includeViewParams
+        </h:outputLink></li>
+
+        <li><h:outputLink value="withbean/page1-redirect-ivp">
+            page1 redirect includeViewParams
+        </h:outputLink></li>
+
+        <li><h:outputLink value="withbean/page1-redirect-noivp">
+            page1 redirect no includeViewParams
+        </h:outputLink></li>
+    </ul>
+</h:body>
+</html>

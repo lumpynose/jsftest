@@ -7,10 +7,11 @@
 
 <h:head>
     <h:outputStylesheet library="css" name="default.css" />
-    <title>index redirect includeViewParams</title>
 </h:head>
 
 <h:body>
+    <h2>index redirect no includeViewParams</h2>
+    
     <h:form id="form">
         <p>
             <h:inputText id="something1" required="true"
@@ -27,7 +28,7 @@
         </p>
 
         <h:commandButton value="submit"
-            action="page2-redirect-ivp.xhtml?faces-redirect=true&amp;includeViewParams=true" />
+            action="page2-redirect-noivp.xhtml?faces-redirect=true" />
     </h:form>
 </h:body>
 </html>

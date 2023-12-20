@@ -7,10 +7,11 @@
 
 <h:head>
     <h:outputStylesheet library="css" name="default.css" />
-    <title>index forward includeViewParams</title>
 </h:head>
 
 <h:body>
+    <h2>index forward no includeViewParams</h2>
+    
     <h:form id="form">
         <p>
             <h:inputText id="something1" required="true"
@@ -26,8 +27,7 @@
             </h:inputText>
         </p>
 
-        <h:commandButton value="submit"
-            action="page2-forward-ivp.xhtml?includeViewParams=true" />
+        <h:commandButton value="submit" action="page2-forward-noivp.xhtml" />
     </h:form>
 </h:body>
 </html>
