@@ -15,11 +15,11 @@ import jakarta.inject.Named;
  */
 @Named
 @SessionScoped
-public class BackingBean implements Serializable {
+public class BackingBean1 implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private final static Logger log =
-            LoggerFactory.getLogger(BackingBean.class.getSimpleName());
+            LoggerFactory.getLogger(BackingBean1.class.getSimpleName());
 
     private String something1, something2;
 
@@ -72,70 +72,6 @@ public class BackingBean implements Serializable {
      */
     public List<String> getUserNames() {
         return this.userNames;
-    }
-
-    /**
-     * @return the user
-     */
-    public String getUser() {
-        return this.user;
-    }
-
-    /**
-     * @param user1 the user to set
-     */
-    public void setUser(final String user1) {
-        log.info("set user: {}", user1);
-
-        this.user = user1;
-    }
-
-    /**
-     * @return the hide
-     */
-    public Boolean getHide() {
-        return this.hide;
-    }
-
-    /**
-     * @param hide the hide to set
-     */
-    public void setHide(final Boolean hide) {
-        log.info("set hide: {}", hide);
-
-        this.hide = hide;
-    }
-
-    /**
-     * @return the upOrDown
-     */
-    public String getUpOrDown() {
-        return this.upOrDown;
-    }
-
-    /**
-     * @param upOrDown the upOrDown to set
-     */
-    public void setUpOrDown(final String upOrDown) {
-        log.info("set upOrDown: {}", upOrDown);
-
-        this.upOrDown = upOrDown;
-    }
-
-    /**
-     * @return the count
-     */
-    public Integer getCount() {
-        return this.count;
-    }
-
-    /**
-     * @param count the count to set
-     */
-    public void setCount(final Integer count) {
-        log.info("set count: {}", count);
-
-        this.count = count;
     }
 
     /**

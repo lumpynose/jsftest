@@ -19,65 +19,75 @@
     <h:messages id="globalMessages" styleClass="error" />
 
     <h:form id="form">
-        <p>
+        <div class="select">
             <h:outputLabel for="selectUser" value="select user: " />
-            <h:selectOneMenu id="selectUser" value="#{backingBean.user}"
+            <h:selectOneMenu id="selectUser" value="#{backingBean2.user}"
                 required="true" requiredMessage="Please select a user.">
                 <f:selectItem itemLabel="Select One" itemValue="" />
-                <f:selectItems value="#{backingBean.userNames}" />
+                <f:selectItems value="#{backingBean2.userNames}" />
             </h:selectOneMenu>
-        </p>
+        </div>
 
-        <p class="error">
+        <span class="error">
             <h:message for="selectUser" />
-        </p>
+        </span>
 
-        <p>
-            <h:selectBooleanCheckbox value="#{backingBean.hide}">
-                hide
-            </h:selectBooleanCheckbox>
+        <div class="boxradio">
+            <span class="box"> <h:selectBooleanCheckbox
+                    value="#{backingBean2.hide}">
+                    hide
+                </h:selectBooleanCheckbox>
+            </span>
 
             <h:message for="radio" />
 
-            <h:selectOneRadio value="#{backingBean.upOrDown}" group="radio">
-                <f:selectItem itemValue="up" itemLabel="up"
-                    group="radio" />
-            </h:selectOneRadio>
+            <span class="radio"> <span class="radio2"> <h:selectOneRadio
+                        value="#{backingBean2.upOrDown}" group="radio">
+                        <f:selectItem itemValue="up" itemLabel="up"
+                            group="radio" />
+                    </h:selectOneRadio>
+            </span> <span class="radio2"> <h:selectOneRadio
+                        value="#{backingBean2.upOrDown}" group="radio">
+                        <f:selectItem itemValue="down" itemLabel="down"
+                            group="radio" />
+                    </h:selectOneRadio>
+            </span> <span class="radio2"> <h:selectOneRadio
+                        value="#{backingBean2.upOrDown}" group="radio">
+                        <f:selectItem itemValue="none"
+                            itemLabel="neither" group="radio"
+                            pt:checked="true" />
+                    </h:selectOneRadio>
+            </span>
+            </span>
+        </div>
 
-            <h:selectOneRadio value="#{backingBean.upOrDown}" group="radio">
-                <f:selectItem itemValue="down" itemLabel="down"
-                    group="radio" />
-            </h:selectOneRadio>
-
-            <h:selectOneRadio value="#{backingBean.upOrDown}" group="radio">
-                <f:selectItem itemValue="none" itemLabel="neither"
-                    group="radio" pt:checked="true" />
-            </h:selectOneRadio>
-        </p>
-
-        <p>
-            <h:outputLabel for="backingBean.count" value="how many: " />
+        <div class="count">
+            <h:outputLabel for="backingBean2.count" value="how many: " />
             <h:inputText id="count" required="true" title="count"
-                value="#{backingBean.count}" >
+                value="#{backingBean2.count}">
                 <f:validateLength minimum="1" />
                 <f:validateLongRange minimum="0" />
             </h:inputText>
-        </p>
-        
-        <p class="error">
-            <h:message for="count" />
-        </p>
+        </div>
 
-        <h:commandButton value="submit"
-            action="page2-submit.xhtml?faces-redirect=true&amp;includeViewParams=true" />
+        <span class="error">
+            <h:message for="count" />
+        </span>
+
+        <div class="submit">
+<!--             <h:commandButton value="submit" -->
+<!--                 action="page2-submit.xhtml?faces-redirect=true&amp;includeViewParams=true" /> -->
+            <h:commandButton value="submit"
+                action="page2-submit.xhtml?faces-redirect=true" />
+        </div>
     </h:form>
 
     <hr />
-    
-    <p>
+
+    <div>
         <h:link outcome="add">
             add new user
         </h:link>
-    </p>
+    </div>
 </h:body>
 </html>

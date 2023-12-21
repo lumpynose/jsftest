@@ -14,8 +14,8 @@
 </h:head>
 
 <f:metadata>
-    <f:viewParam name="something1" value="#{backingBean.something1}"/>
-    <f:viewParam name="something2" value="#{backingBean.something2}"/>
+    <f:viewParam name="something1" value="#{backingBean1.something1}"/>
+    <f:viewParam name="something2" value="#{backingBean1.something2}"/>
 </f:metadata>
 
 <h:body>
@@ -26,7 +26,7 @@
             value="Something1 entered" />
         <br />
         <h:outputText id="something1" title="Something1 entered"
-            value="#{backingBean.something1}" />
+            value="#{backingBean1.something1}" />
     </p>
 
     <p>
@@ -34,7 +34,7 @@
             value="Something2 entered" />
         <br />
         <h:outputText id="something2" title="Something2 entered"
-            value="#{backingBean.something2}" />
+            value="#{backingBean1.something2}" />
     </p>
 
     <p>

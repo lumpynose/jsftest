@@ -16,59 +16,64 @@
 <h:body>
     <h2>page1 submit, with bean</h2>
 
-    <h:messages id="globalMessages" styleClass="error" />
+    <h:messages id="globalMessages" />
 
     <h:form id="form">
-        <p>
+        <div>
             <h:outputLabel for="selectUser" value="select user: " />
             <h:selectOneMenu id="selectUser" value="#{user}"
                 required="true" requiredMessage="Please select a user.">
                 <f:selectItem itemLabel="Select One" itemValue="" />
-                <f:selectItems value="#{backingBean.userNames}" />
+                <f:selectItems value="#{backingBean2.userNames}" />
             </h:selectOneMenu>
-        </p>
+        </div>
 
-        <p class="error">
+        <div class="error">
             <h:message for="selectUser" />
-        </p>
+        </div>
 
-        <p>
-            <h:selectBooleanCheckbox value="#{hide}">
+        <div class="boxradio">
+            <span class="box">
+                <h:selectBooleanCheckbox value="#{hide}">
                 hide
-            </h:selectBooleanCheckbox>
+                </h:selectBooleanCheckbox>
+            </span>
 
             <h:message for="radio" />
 
-            <h:selectOneRadio value="#{upOrDown}" group="radio">
-                <f:selectItem itemValue="up" itemLabel="up"
-                    group="radio" />
-            </h:selectOneRadio>
+            <span class="radio">
+                <h:selectOneRadio value="#{upOrDown}" group="radio">
+                    <f:selectItem itemValue="up" itemLabel="up"
+                        group="radio" />
+                </h:selectOneRadio>
 
-            <h:selectOneRadio value="#{upOrDown}" group="radio">
-                <f:selectItem itemValue="down" itemLabel="down"
-                    group="radio" />
-            </h:selectOneRadio>
+                <h:selectOneRadio value="#{upOrDown}" group="radio">
+                    <f:selectItem itemValue="down" itemLabel="down"
+                        group="radio" />
+                </h:selectOneRadio>
 
-            <h:selectOneRadio value="#{upOrDown}" group="radio">
-                <f:selectItem itemValue="none" itemLabel="neither"
-                    group="radio" pt:checked="true" />
-            </h:selectOneRadio>
-        </p>
+                <h:selectOneRadio value="#{upOrDown}" group="radio">
+                    <f:selectItem itemValue="none" itemLabel="neither"
+                        group="radio" pt:checked="true" />
+                </h:selectOneRadio>
+            </span>
+        </div>
 
-        <p>
+        <div class="count">
             <h:outputLabel for="count" value="how many: " />
             <h:inputText id="count" required="true" title="count"
-                value="#{count}" >
+                value="#{count}">
                 <f:validateLength minimum="1" />
                 <f:validateLongRange minimum="0" />
             </h:inputText>
-        </p>
-        <p class="error">
+        </div>
+
+        <div class="error">
             <h:message for="count" />
-        </p>
+        </div>
 
         <h:commandButton value="submit"
-            action="#{backingBean.submit(user, hide, upOrDown, count)}" />
+            action="#{backingBean2.submit(user, hide, upOrDown, count)}" />
     </h:form>
 </h:body>
 </html>
